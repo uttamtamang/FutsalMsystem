@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Booking Field</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="public/css/bootstrap.min.css" />
+ <link rel="stylesheet" href="public/bootstrap/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="public/css/topmenu.css" />
+<link rel="stylesheet" type="text/css" href="public/css/simple-sidebar.css">
+<link rel="stylesheet" type="text/css" href="public/css/AdminTable.css">
+<script type="text/javascript" src="public/js/jquery.min.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
+
+  </head>
+  <body style="background-image: url(public/images/fut3.jpg);background-repeat: no-repeat;    background-size:cover">
+    <style type="text/css">
+	#datepicker
+	{margin-bottom: 10px;
+	}
+	#datepicker  span:hover{
+		cursor:pointer;
+	}
+	.col-md-4
+	{
+		height: 90px;
+	}
+	.btn
+	{
+		height:70px;
+	}
+
+</style>
+<div class="panel panel-info">
+  <div class="panel-heading "><h5 align="center">Pick a Date:</h5></div>
+  <div class="panel-body">
+    <form action="/adminBooking">
+	<div id="datepicker" class="input-group date "data-date-format="yyyy-mm-dd" >
+	<input type="text" name="datecal" id="calDate" class="form-control" >
+	<span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+	</div>
+	<div class="">
+	<input type="submit" name="btncal" id="btncal" class="btn btn-primary btn-block" value="Check available booking" >
+</div>
+</form>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript">
+
+  $(function(){
+    $("#datepicker").datepicker({
+      autoclose:true,
+      todayHighlight:true,
+      startDate:"today",
+      showAnim:'drop',
+      endDate:"+14d",
+      orientation: "bottom left",
+        showAnim: "drop"
+    }).datepicker('update',new Date());
+
+  });
+
+
+
+    $(document).ready(function(){
+    $("#btncal").click(function(){
+       $("#popupDate").val($("#calDate").val());
+    });
+});
+
+
+
+</script>
+</body>
+</html>
