@@ -1,0 +1,57 @@
+a
+{
+  text-decoration: none;
+}
+
+*
+{
+padding:0;margin:0;
+}
+li
+{
+  list-style: none;
+}
+/*navigation styling*/
+.main-nav
+{
+
+background: #303030;
+
+opacity:0.9;
+}
+.main-nav a
+{
+  letter-spacing: .1em;
+  display: block;
+  padding: 10px 0px 10px 20px;
+  font-family:  Helvetica;
+  color: #fff;
+  border-bottom:1px solid #800000;
+  text-decoration: none;
+}
+.main-nav a:hover
+{
+  background: #000000;
+
+}
+
+.main-nav-ul ul
+{
+  display:none;
+}
+
+.main-nav-ul li.tap ul
+{
+  display: block;
+}
+.sub-arrow
+{
+  float: right;
+  margin-right: 20px;
+ margin-top: 5px;
+}
+  
+  .main-nav ul li.active
+  {
+     background: #000000;
+  }
