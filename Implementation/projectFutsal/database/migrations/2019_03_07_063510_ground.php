@@ -14,9 +14,10 @@ class Ground extends Migration
     public function up()
     {
         //
-        Schema::create('ground', function (Blueprint $table) {
+        Schema::create('grounds', function (Blueprint $table) {
             $table->increments('ground_id');
-            $table->string('ground');
+            $table->string('ground',50);
+            $table->string('image', 150)->nullable();
             $table->timestamps();
         });
        
@@ -30,6 +31,6 @@ class Ground extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('ground');
+        Schema::dropIfExists('grounds');
     }
 }

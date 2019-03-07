@@ -18,7 +18,7 @@ class RateTime extends Migration
             $table->increments('rate_time_id');
             $table->string('time');
             $table->integer('ground_id')->unsigned();
-            $table->foreign('ground_id')->references('ground_id')->on('ground');
+            $table->foreign('ground_id')->references('ground_id')->on('grounds');
             $table->double('rate');
             $table->timestamps();
         });

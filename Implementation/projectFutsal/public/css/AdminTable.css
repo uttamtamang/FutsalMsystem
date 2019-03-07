@@ -13,13 +13,15 @@
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
     border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
+    font-size: 15px; /* Increase font-size */
 }
 
 #myTable th, #myTable td {
-    text-align: left; /* Left-align text */
+    text-align: center; /* Left-align text */
+    color: #ddd;
     padding: 12px; /* Add padding */
 }
+
 #data{
         background-color: #f1f1f1;
 
@@ -35,7 +37,7 @@
 }
 .header-table
 {
-background-color: #669999;
+background-color:	#696969;
 }
 .table-wrapper-scroll-y {
   display: block;

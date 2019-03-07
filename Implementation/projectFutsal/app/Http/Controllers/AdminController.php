@@ -9,7 +9,7 @@ class AdminController extends Controller
     //
     public function bookNowAdmin()
   {
-  return view('Admins.bookNowAdmin');
+  return view('admins.bookNowAdmin');
 
   }
 }

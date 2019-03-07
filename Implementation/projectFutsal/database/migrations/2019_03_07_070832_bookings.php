@@ -17,7 +17,7 @@ class Bookings extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('booking_id');
             $table->integer('ground_id')->unsigned();
-            $table->foreign('ground_id')->references('ground_id')->on('ground');
+            $table->foreign('ground_id')->references('ground_id')->on('grounds');
             $table->integer('id')->unsigned();
             $table->foreign('id')->references('id')->on('users');
             $table->string('date');

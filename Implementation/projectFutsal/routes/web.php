@@ -24,3 +24,11 @@ Route::put('/editprofile/{id}','ProfileController@update');
 
 //Admin Page Routes
 Route::get('/bookNowAdmin','AdminController@bookNowAdmin' );
+//Managing Ground Detail
+Route::get('/viewGround','GroundController@index');
+Route::get('/addGround', 'GroundController@create'); //create
+Route::post('/editGround', 'GroundController@store'); //store
+//Manage Available Times and respective Rates
+Route::get('/viewRateTime','RateTimeController@index');
+Route::get('/addRateTime', 'RateTimeController@create'); //create
+Route::post('/editRateTime', 'RateTimeController@store'); //store
