@@ -2,157 +2,281 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Booking Field</title>
+    <title>Admin Field</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="stylesheet" href="public/css/bootstrap.min.csss" />
+  <link rel="stylesheet" href="public/css/bootstrap.min.css" />
  <link rel="stylesheet" href="public/bootstrap/css/font-awesome.min.css" />
    <link rel="stylesheet" href="public/css/topmenu.css" />
 <link rel="stylesheet" type="text/css" href="public/css/simple-sidebar.css">
 <link rel="stylesheet" type="text/css" href="public/css/AdminTable.css">
 <script type="text/javascript" src="public/js/jquery.min.js"></script>
 <script src="public/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
-
+<link  rel="stylesheet" type="text/css" href="public/bootstrap/datepicker.min.css">
   </head>
   <body style="background-image: url(public/images/fut3.jpg);background-repeat: no-repeat;    background-size:cover">
-  <div class="container-fluid" style="height: 100%;width: 100%">
-  <div class="row">
-  <section class="content">
-    <div class="container-fluid">
-      <div class="row " >
-
-          <div class="col-md-3" >
-            <div class="row">
-              <div class="col-md-12">
-                <section class="sidebar">
-                  @yield('sidebar')
-                  <nav class="main-nav">
-	                   <ul class="main-nav-ul">
-		                     <li><a href="#" style="text-align:center;">Admin Dashboard</a></li>
-		                      <li class="has-sub {{current_page('viewAdmin')?'active':''}} {{current_page('addAdmin')?'active':''}}"><a href="#"><i class="fa fa-user" style="font-size:18px"></i> Manage Admin<span class="caret sub-arrow"></span></a>
-			                      <ul >
-				                       <li><a href="/viewAdmin">View Admins</a></li>
-				                        <li><a href="/addAdmin">Add Admin</a></li>
-			                           </ul>
-		                            </li>
-		                             <li  class="{{current_page('Users')?'active':''}}"><a href="/Users">View Users</a></li>
-		                             <li  class="{{current_page('viewBooking')?'active':''}}"><a href="/viewBooking"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Bookings Details</a></li>
-		                             <li  class="{{current_page('bookingStatus')?'active':''}}{{current_page('bookNowAdmin')?'active':''}}"><a href="/bookNowAdmin"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Book Field Admin</a></li>
-		                             <li>  <form action="/logout" method="post" id="logout-form">
-                                  {{csrf_field()}}
-                                  <a href="#" onclick="document.getElementById('logout-form').submit()" ><i class="fa fa-sign-out" style="font-size:18px;color:white;"></i>Logout</a>
-                                </form> </li>
-
-	                      </ul>
-                      </nav>
-
-                      <script type="text/javascript" src="{{{ URL::asset('js/jquery.min.js')}}}"></script>
-                      <script type="text/javascript">
-                      $(document).ready(function(e)
-                      {
-                        $('.has-sub').click(function(){
-
-                          $("ul ul").slideToggle(500);
-                        });
-
-
-
-                      });
-
-</script>
-
-             </section>
-           </div>
-           </div>
-           <div class="row">
-             <div class="col-md-12">
-            <section>
-            @yield('calender')
-            <style type="text/css">
-	#datepicker
-	{margin-bottom: 10px;
-	}
-	#datepicker  span:hover{
-		cursor:pointer;
-	}
-	.col-md-4
-	{
-		height: 90px;
-	}
-	.btn
-	{
-		height:70px;
-	}
+    <style type="text/css">
+    #groundpicker{
+      margin-bottom: 10px;
+      width:100%;
+    }
+  #datepicker
+  {margin-bottom: 10px;
+  }
+  #datepicker  span:hover{
+    cursor:pointer;
+  }
+  .col-md-4
+  {
+    height: 90px;
+  }
+  .btn
+  {
+    height:70px;
+  }
+  #btnground{
+    height:35px;
+    width:100%;
+  }
+  .btnTime
+  {
+    padding-top:20px;
+  }
 
 </style>
-<div class="panel panel-info">
-  <div class="panel-heading "><h5 align="center">Pick a Date:</h5></div>
-  <div class="panel-body">
-    <form action="/adminBooking">
-	<div id="datepicker" class="input-group date "data-date-format="yyyy-mm-dd" >
-	<input type="text" name="datecal" id="calDate" class="form-control" >
-	<span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
-	</div>
-	<div class="">
-	<input type="submit" name="btncal" id="btncal" class="btn btn-primary btn-block" value="Check available booking" >
-</div>
-</form>
-  </div>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+    <div class="container-fluid">
+<div class="row " >
 
-<script type="text/javascript">
+        <div class="col-md-3" >
+          <div class="row">
+            <div class="col-md-12">
+           <section>
+             <nav class="main-nav">
+ 	<ul class="main-nav-ul">
+ 		<li><a href="#" style="text-align:center;">Admin Dashboard</a></li>
+ 		<li class="has-sub {{current_page('viewAdmin')?'active':''}} {{current_page('addAdmin')?'active':''}}"><a href="#"><i class="		fa fa-area-chart" style="font-size:18px"></i> Manage Ground<span class="caret sub-arrow"></span></a>
+ 			<ul >
+ 				<li><a href="/viewAdmin">Add Ground</a></li>
+ 				<li  ><a href="/addAdmin">Edit Ground</a></li>
+ 			</ul>
+ 		</li>
+    <li class="has-sub {{current_page('viewAdmin')?'active':''}} {{current_page('addAdmin')?'active':''}}"><a href="#"><i class="	fa fa-rupee" style="font-size:18px"></i> Manage Rate_Time<span class="caret sub-arrow"></span></a>
+      <ul >
+        <li><a href="/viewAdmin">Add RateTime</a></li>
+        <li ><a href="/addAdmin">Edit RateTime</a></li>
+      </ul>
+    </li>
+ 		<li  class="{{current_page('Users')?'active':''}}"><a href="/Users">View Users</a></li>
+ 		<li  class="{{current_page('viewBooking')?'active':''}}"><a href="/viewBooking"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Bookings Details</a></li>
+ 		<li  class="{{current_page('bookingStatus')?'active':''}}{{current_page('bookNowAdmin')?'active':''}}"><a href="/bookNowAdmin"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Book Field Admin</a></li>
+ 		<li>  <form action="/logout" method="post" id="logout-form">
+            <a href="#" onclick="document.getElementById('logout-form').submit()" ><i class="fa fa-sign-out" style="font-size:18px;color:white;"></i>Logout</a>
+           </form> </li>
 
-  $(function(){
-    $("#datepicker").datepicker({
-      autoclose:true,
-      todayHighlight:true,
-      startDate:"today",
-      showAnim:'drop',
-      endDate:"+14d",
-      orientation: "bottom left",
-        showAnim: "drop"
-    }).datepicker('update',new Date());
-
-  });
-
-
-
-    $(document).ready(function(){
-    $("#btncal").click(function(){
-       $("#popupDate").val($("#calDate").val());
-    });
-});
+ 	</ul>
+ </nav>
 
 
+ <script type="text/javascript">
+ $(document).ready(function(e)
+ {
+ $('.has-sub').click(function(){
 
-</script>
-          </section>
-           </div>
-           </div>
-          </div>
+ $("ul ul").slideToggle(500);
+ });
 
-          <div class="col-md-9" >
+
+
+ });
+
+ </script>
+
+           </section>
+         </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
           <section>
-              @yield('MenuContent')
-          </section>
+            <div class="panel panel-info">
+              <div class="panel-heading "><h5 align="center">Select Ground & Date:</h5></div>
+              <div class="panel-body">
+                <form action="/adminBooking">
+                  <div id="groundpicker" class="input-group">
+                    <select class="form-control" name="ground" required>
+                      <option value="">Select Ground First</option>
+                      <option value="First">First</option>
+                      <option value="Second">Second</option>
+                      <option value="Third">Third</option>
+                    </select>
+
+                  </div>
+            	<div id="datepicker" class="input-group date "data-date-format="yyyy-mm-dd" >
+            	<input type="text" name="datecal" id="calDate" class="form-control" >
+            	<span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+            	</div>
+            	<div class="">
+            	<input type="submit" name="btncal" id="btncal" class="btn btn-primary btn-block" value="Check available booking" >
+            </div>
+            </form>
+              </div>
+              <script type="text/javascript" src="public/js/datepicker.js"></script>
+
+            <script type="text/javascript">
+
+              $(function(){
+                $("#datepicker").datepicker({
+                  autoclose:true,
+                  todayHighlight:true,
+                  startDate:"today",
+                  showAnim:'drop',
+                  endDate:"+14d",
+                  orientation: "bottom left",
+                    showAnim: "drop"
+                }).datepicker('update',new Date());
+
+              });
+
+                $(document).ready(function(){
+                $("#btncal").click(function(){
+                   $("#popupDate").val($("#calDate").val());
+                });
+            });
+            </script>
+        </section>
+         </div>
+         </div>
+        </div>
+
+        <div class="col-md-9" >
+        <section>
+          <div class="container-fluid"  id="availTime">
+
+            <div class="panel panel-info" >
+            <div class="panel-heading"><h3>Available Time</h3></div>
+            <div class="panel-body">
+               <div class="row">
+             @php
+
+                    $tt = date("Y-m-d",time());//current date
+                        $choice_date = ($_REQUEST['datecal'])? $_REQUEST["datecal"]:false;//date that came from the datepicker
+                        $need_sorting = ($tt==$choice_date)? true:false;
+                          foreach($availableTime as $time)
+                          {
+                            $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime" data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
+                              foreach ($booking as $book )
+                            {
+                            if ($time->label==$book->time) {
+                               $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
+                            }
+                          }
+
+                            if($need_sorting){
+                              $hour= date("H",time());
+
+                              if ($time->label==$book->time) {
+                               $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
+                            }
+
+                              if($hour>($time->maxTime)-2){
+                                $printer = false;
+                              }
+                            }
+                            echo $printer;
+                          }
+
+             @endphp
+
+            </div>
+            </div>
+
+           <div class="modal fade" role="dialog" id="bookModal" data-backdrop="static">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Admin Booking Manual</h3>
+
+                </div>
+                <div class="modal-body">
+                  <div class="form">
+                  <form class="form-horizontal" action="/bookNowAdmin" method="post">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                      <label class="control-label col-sm-3" >Date:</label>
+                        <div class="col-sm-9">
+                        <input type="text" name="popupDate" class="form-control" id="popupDate" value={{$_REQUEST["datecal"]}} readonly="readonly">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-3" >Time:</label>
+                        <div class="col-sm-9">
+                        <input type="text" name="time" class="form-control" id="time" readonly="readonly">
+                      </div>
+                    </div>
+                            <div class="form-group">
+                      <label class="control-label col-sm-3" >Price:</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="price"class="form-control" id="price" readonly="readonly">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="hidden" name="hiddenMail" value="{{Sentinel::getUser()->email}}">
+                      <input type="hidden" name="hiddenrole" value="  {{Sentinel::getUser()->roles()->first()->slug}}">
+                    </div>
+                    <div class="form-group ">
+                    <div class=" col-md-offset-3 col-md-4">
+                      <input type="submit" class="btn btn-success btn-block" id="book-btn"style="height: 50px" value="Book Now">
+                    </div>
+                    </div>
+                </form>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+           </div>
+
+
           </div>
-  </div>
-  </div>
-  </section>
-  </div>
+
+          <script type="text/javascript">
+
+
+          $(document).ready(function(){
+                     $("#calDate").val('{{$_REQUEST["datecal"]}}');
+              });
+
+
+              $(document).ready(function(){
+              $("#btncal").click(function(){
+                 $("#popupDate").val($("#calDate").val());
+              });
+          });
+
+              $(document).ready(function(){
+              $(".btnTime").click(function(){
+                $("#time").val($(this).text());
+              });
+          });
+                  $(document).ready(function(){
+              $(".btnTime").click(function(){
+               $("#price").val($(this).attr("value"));
+              });
+          });
+          $(document).ready(function(){
+              $("#book-btn").click(function(){
+               $('#bookModal').modal('show');
+
+              });
+          });
 
 
 
-  <div class="row">
-  <footer>
-      @include('layout.footer')
-  </footer>
-  </div>
-
-  </div>
-
-
+          </script>
+        </section>
+        </div>
+</div>
+</div>
     </body>
   </html>
