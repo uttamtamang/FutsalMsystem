@@ -44,7 +44,7 @@
               <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="login">Book Now</a>
+              <a class="nav-link js-scroll-trigger" href="admindash">Book Now</a>
             </li>
           </ul>
         </div>

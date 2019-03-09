@@ -14,8 +14,9 @@
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <link  rel="stylesheet" type="text/css" href="{{ asset('bootstrap/datepicker.min.css') }}">
+    <link href="{{{ URL::asset('css/loginform.css')}}}" rel="stylesheet">
 </head>
-<body style="background-image: url(images/boy.jpg);background-repeat: no-repeat;    background-size:cover">
+<body style="background-image: url(images/dash.jpg);background-repeat: no-repeat;    background-size:cover">
 <div class="container-fluid" style="height: 100%;width: 100%">
   <div class="row">
   @include('layouts.nav')

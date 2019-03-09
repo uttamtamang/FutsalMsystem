@@ -2,8 +2,8 @@
 @section('MenuContent')
 
 <div class="row">
-			<div class="container">
-			<div class="col-lg-8 col-md-offset-1">
+			
+			<div class="col-lg-8 col-md-offset-2">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h3 class="panel-title">Add New Time and Rate</h3>			
@@ -67,7 +67,7 @@
 							
 					</div>
 				</div>
-			</div>
+			
 		</div>
 
 
