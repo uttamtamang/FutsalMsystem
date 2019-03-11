@@ -9,8 +9,8 @@ class Bookings extends Model
     //
     protected $table = "bookings";
 
-    protected $fillable = ['title', 'slug', 'image',
-        'description', 'meta_title', 'meta_keywords',
-        'meta_description', 'status'
+    protected $fillable = ['ground_id', 'user_id', 'date',
+        'time', 'phone', 'rate',
+         'status'
     ];
 }

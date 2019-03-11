@@ -15,11 +15,11 @@ class Bookings extends Migration
     {
         //
         Schema::create('bookings', function (Blueprint $table) {
-            $table->increments('booking_id');
+            $table->increments('id');
             $table->integer('ground_id')->unsigned();
-            $table->foreign('ground_id')->references('ground_id')->on('grounds');
-            $table->integer('id')->unsigned();
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('ground_id')->references('id')->on('grounds');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('date');
             $table->string('time');
             $table->string('phone');

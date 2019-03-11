@@ -1,0 +1,26 @@
+ 
+  #reg_container{
+    width:70%;
+    padding: 20px 70px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    opacity: 0.9;
+  }
+  
+  #reg_container h2{
+    text-align: center;
+    padding-bottom:20px;
+  }
+  .form-submit {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    padding: 17px 0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    background-image: linear-gradient(to left, #74ebd5, #9face6); }
+  

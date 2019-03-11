@@ -2,14 +2,28 @@
 @section('MenuContent')
 
 <div class="row">
-			
+@if(session()->has('success'))
+            <div class="alert-success">
+                <h1> {!! session()->get('success') !!}</h1>
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul class="list-unstyled">
+                    @foreach($errors->all() as $error)
+                        <li> {{ $error  }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 			<div class="col-lg-8 col-md-offset-2">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<h3 class="panel-title">Add New Ground</h3>			
 					</div>
 						<div class="panel-body">
-						<form action="/addGround" method="post">
+						<form action="/viewGround" method="post" enctype="multipart/form-data">
 							{{csrf_field()}}
 							<div class="form-group {{$errors->has('ground') ? 'has-error' : ''}}">
 								<div class="input-group">
@@ -25,9 +39,9 @@
                                 </div>
 							</div>
 							<div class="form-group">
-							<div>
+							
 							<input type="file" class="form-control" name="image" >
-							</div>
+							
                             </div>
 							<div class="form-group col-md-8 col-md-offset-2">
 								

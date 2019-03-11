@@ -24,11 +24,19 @@ Route::put('/editprofile/{id}','ProfileController@update');
 
 //Admin Page Routes
 Route::get('/bookNowAdmin','AdminController@bookNowAdmin' );
+Route::get('/adminBooking','AdminController@viewBookTimeAdmin');
+Route::get('/viewAdminBookings','AdminController@viewBookings');
 
 //Managing Ground Detail
 Route::get('/viewGround','GroundController@index');
 Route::get('/addGround', 'GroundController@create'); //create
-Route::post('/editGround', 'GroundController@store'); //store
+Route::post('/viewGround', 'GroundController@store'); //store
+//Route::post('/editGround', 'GroundController@store'); //store
+
+Route::get('admins/editGround/{id}', 'GroundController@edit'); //edit
+Route::put('viewGround/{id}', 'GroundController@update'); //update
+
+Route::delete('admins/viewGround/{id}', 'GroundController@destroy'); //destroy
 
 //Manage Available Times and respective Rates
 Route::get('/viewRateTime','RateTimeController@index');
@@ -36,7 +44,6 @@ Route::get('/addRateTime', 'RateTimeController@create'); //create
 Route::post('/editRateTime', 'RateTimeController@store'); //store
 
 //User controller
-Route::get('/viewUser','UserController@index');
+Route::get('/viewUser','AdminController@showUsers');
 
 //Booking Controller
-Route::get('/viewAdminBookings','BookingController@index');

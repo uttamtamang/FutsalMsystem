@@ -14,11 +14,11 @@ class RateTime extends Migration
     public function up()
     {
         //
-        Schema::create('rate_time', function (Blueprint $table) {
-            $table->increments('rate_time_id');
+        Schema::create('rate_times', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('time');
             $table->integer('ground_id')->unsigned();
-            $table->foreign('ground_id')->references('ground_id')->on('grounds');
+            $table->foreign('ground_id')->references('id')->on('grounds');
             $table->double('rate');
             $table->timestamps();
         });

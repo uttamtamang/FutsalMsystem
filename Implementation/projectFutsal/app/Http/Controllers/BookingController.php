@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use  App\Http\Controllers\AdminController;
 
 class BookingController extends Controller
 {
@@ -11,4 +12,6 @@ class BookingController extends Controller
     {
         return view('admins.viewAdminBookings');
     }
+
+ 
 }

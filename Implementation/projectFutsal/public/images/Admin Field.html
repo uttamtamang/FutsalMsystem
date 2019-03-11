@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:8000/bookNowAdmin -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Admin Field</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="./Admin Field_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Admin Field_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Admin Field_files/topmenu.css">
+    <link rel="stylesheet" type="text/css" href="./Admin Field_files/simple-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="./Admin Field_files/AdminTable.css">
+    <script type="text/javascript" src="./Admin Field_files/jquery.min.js.download"></script>
+    <script src="./Admin Field_files/bootstrap.min.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./Admin Field_files/datepicker.min.css">
+    <link href="./Admin Field_files/loginform.css" rel="stylesheet">
+</head>
+<body style="background-image: url(images/dash.jpg);background-repeat: no-repeat;    background-size:cover">
+<div class="container-fluid" style="height: 100%;width: 100%">
+  <div class="row">
+  <nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1:8000/">JANATA FUTSAL</a>
+    </div>
+     <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+                  <li class="u-email">
+          <span> <a href="http://127.0.0.1:8000/bookNowAdmin#"><i class="fa fa-bell"></i></a>
+Welcome Uttam
+</span>
+         </li>
+        
+          </ul>
+  </div>
+</div>
+</nav> 
+   </div> 
+   
+   <div class="row">
+  <section>
+  <div class="container-fluid">
+<div class="row ">
+  
+        <div class="col-md-3">
+          <div class="row">
+            <div class="col-md-12">
+           <section>
+            <nav class="main-nav">
+ 	<ul class="main-nav-ul">
+ 		<li><a href="http://127.0.0.1:8000/admindash" style="text-align:center;">Admin Dashboard</a></li>
+ 		<li class="has-sub "><a href="http://127.0.0.1:8000/bookNowAdmin#"><i class="fa fa-area-chart" style="font-size:18px"></i> Manage Ground<span class="caret sub-arrow"></span></a>
+ 			<ul class="ul">
+ 				<li><a href="http://127.0.0.1:8000/addGround">Add Ground</a></li>
+ 				<li><a href="http://127.0.0.1:8000/viewGround">View Ground</a></li>
+ 			</ul>
+ 		</li>
+    <li class="has-sub1"><a href="http://127.0.0.1:8000/bookNowAdmin#"><i class="fa fa-rupee" style="font-size:18px"></i> Manage Rate_Time<span class="caret sub-arrow"></span></a>
+      <ul class="ul1">
+        <li><a href="http://127.0.0.1:8000/addRateTime">Add RateTime</a></li>
+        <li><a href="http://127.0.0.1:8000/viewRateTime">View RateTime</a></li>
+      </ul>
+		</li>
+		<li class=""><a href="http://127.0.0.1:8000/editprofile/1"><i class="fa fa-user" style="font-size:18px;color:white;"></i> Edit Profile</a></li>
+ 		<li class=""><a href="http://127.0.0.1:8000/viewUser"><i class="fa fa-user" style="font-size:18px;color:white;"></i> View Users</a></li>
+ 		<li class=""><a href="http://127.0.0.1:8000/viewAdminBookings"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Bookings Details</a></li>
+ 		<li class=""><a href="http://127.0.0.1:8000/bookNowAdmin"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Book Field Admin</a></li>
+ 		<li>
+		 <a class="dropdown-item" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+                                                     document.getElementById(&#39;logout-form&#39;).submit();">
+																										 <i class="fa fa-sign-out" style="font-size:18px;color:white;"></i>
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
+                                        <input type="hidden" name="_token" value="cXvGZdQ10wVeP9f2TZlBAFVTAfEgP8nKvNFUMDrL">                                    </form>
+		</li>
+
+ 	</ul>
+ </nav>
+
+
+ <script type="text/javascript">
+ $(document).ready(function(e)
+ {
+ $('.has-sub').click(function(){
+
+ $(".ul").slideToggle(500);
+ });
+
+ $('.has-sub1').click(function(){
+
+$(".ul1").slideToggle(500);
+});
+
+
+ });
+ 
+
+ </script>
+           </section>
+         </div>
+         </div>
+         <div class="row">
+           <div class="col-md-12">
+          <section>
+          <style type="text/css">
+    #groundpicker{
+      margin-bottom: 10px;
+      width:100%;
+    }
+  #datepicker
+  {margin-bottom: 10px;
+  }
+  #datepicker  span:hover{
+    cursor:pointer;
+  }
+  .col-md-4
+  {
+    height: 90px;
+  }
+  .btn
+  {
+    height:70px;
+  }
+  #btnground{
+    height:35px;
+    width:100%;
+  }
+  .btnTime
+  {
+    padding-top:20px;
+  }
+
+</style>
+<div class="panel panel-info">
+              <div class="panel-heading "><h5 align="center">Select Ground &amp; Date:</h5></div>
+              <div class="panel-body">
+                <form action="http://127.0.0.1:8000/adminBooking">
+                  <div id="groundpicker" class="input-group">
+                    <select class="form-control" name="ground" required="">
+                      <option value="">Select Ground First</option>
+                      <option value="First">First</option>
+                      <option value="Second">Second</option>
+                      <option value="Third">Third</option>
+                    </select>
+
+                  </div>
+            	<div id="datepicker" class="input-group date " data-date-format="yyyy-mm-dd">
+            	<input type="text" name="datecal" id="calDate" class="form-control">
+            	<span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
+            	</div>
+            	<div class="">
+            	<input type="submit" name="btncal" id="btncal" class="btn btn-primary btn-block" value="Check available booking">
+            </div>
+            </form>
+              </div>
+              <script type="text/javascript" src="./Admin Field_files/datepicker.js.download"></script>
+
+            <script type="text/javascript">
+
+              $(function(){
+                $("#datepicker").datepicker({
+                  autoclose:true,
+                  todayHighlight:true,
+                  startDate:"today",
+                  showAnim:'drop',
+                  endDate:"+14d",
+                  orientation: "bottom left",
+                  showAnim: "drop"
+                }).datepicker('update',new Date());
+
+              });
+
+                $(document).ready(function(){
+                $("#btncal").click(function(){
+                   $("#popupDate").val($("#calDate").val());
+                });
+            });
+            </script>
+                    </div></section>
+         </div>
+         </div>
+        </div>
+  
+        <div class="col-md-9">
+        <section>
+                    </section>
+        </div>
+</div>
+</div>
+
+  </section>
+  </div>
+
+</div></body></html>

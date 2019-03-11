@@ -5,13 +5,13 @@
  	<ul class="main-nav-ul">
  		<li><a href="/admindash" style="text-align:center;">Admin Dashboard</a></li>
  		<li class="has-sub "><a href="#"><i class="fa fa-area-chart" style="font-size:18px"></i> Manage Ground<span class="caret sub-arrow"></span></a>
- 			<ul >
+ 			<ul class="ul">
  				<li><a href="/addGround">Add Ground</a></li>
  				<li><a href="/viewGround">View Ground</a></li>
  			</ul>
  		</li>
-    <li class="has-sub"><a href="#"><i class="fa fa-rupee" style="font-size:18px"></i> Manage Rate_Time<span class="caret sub-arrow"></span></a>
-      <ul >
+    <li class="has-sub1"><a href="#"><i class="fa fa-rupee" style="font-size:18px"></i> Manage Rate_Time<span class="caret sub-arrow"></span></a>
+      <ul class="ul1">
         <li><a href="/addRateTime">Add RateTime</a></li>
         <li ><a href="/viewRateTime">View RateTime</a></li>
       </ul>
@@ -41,9 +41,13 @@
  {
  $('.has-sub').click(function(){
 
- $("ul ul").slideToggle(500);
+ $(".ul").slideToggle(500);
  });
 
+ $('.has-sub1').click(function(){
+
+$(".ul1").slideToggle(500);
+});
 
 
  });

@@ -15,7 +15,7 @@ class Ground extends Migration
     {
         //
         Schema::create('grounds', function (Blueprint $table) {
-            $table->increments('ground_id');
+            $table->increments('id');
             $table->string('ground',50);
             $table->string('image', 150)->nullable();
             $table->timestamps();
