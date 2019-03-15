@@ -47,3 +47,5 @@ Route::post('/editRateTime', 'RateTimeController@store'); //store
 Route::get('/viewUser','AdminController@showUsers');
 
 //Booking Controller
+
+Route::get('addRateTime','RateTimeController@load');

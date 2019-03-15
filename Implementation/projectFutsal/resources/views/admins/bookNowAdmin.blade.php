@@ -36,8 +36,8 @@
                   <div id="groundpicker" class="input-group">
                     <select class="form-control" name="ground" required>
                       <option value="">Select Ground First</option>
-                      <option value="First">First</option>
-                      <option value="Second">Second</option>
+                      <option value="1">First</option>
+                      <option value="2">Second</option>
                       <option value="Third">Third</option>
                     </select>
 

@@ -30,9 +30,9 @@
 								<span class="input-group-addon"><i class="fa fa-area-chart"></i></span>
 									<select	class="form-control" name="ground" id="">
 										<option value="">Please Select The Ground</option>
-										<option value="First">First</option>
-										<option value="Second">Second</option>
-										<option value="Third">Third</option>
+										@foreach ($ground as $grounds)
+										<option value={{$grounds->id}}>{{$grounds->ground}}</option>
+										@endforeach
 									</select>
 								</div>
 								<div class="col-md-offset-1 ">

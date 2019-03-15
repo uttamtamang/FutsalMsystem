@@ -35,7 +35,7 @@ class AdminController extends Controller
 
   {
     $bookedTime='';
-    $availableTime=Rate_Time::all();
+    $availableTime=Rate_Time::all()->where('ground_id',2);
     $booking=Bookings::where('date',$_REQUEST["datecal"])->get();
    
      return view('admins.adminBooking',compact('booking','availableTime'));  

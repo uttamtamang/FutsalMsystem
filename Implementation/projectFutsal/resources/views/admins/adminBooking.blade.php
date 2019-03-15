@@ -21,19 +21,19 @@
               $need_sorting = ($tt==$choice_date)? true:false;
                 foreach($availableTime as $time)
                 {
-                  $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime" data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->time.'</div></div>';
+                  $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime" data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
                     foreach ($booking as $book )
                   {
-                  if ($time->label==$book->time) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
+                  if ($time->time==$book->time) {
+                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
                   }
                 }
 
                   if($need_sorting){
                     $hour= date("H",time());
 
-                    if ($time->label==$book->time) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
+                    if ($time->time==$book->time) {
+                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
                   }
 
                     if($hour>($time->maxTime)-2){

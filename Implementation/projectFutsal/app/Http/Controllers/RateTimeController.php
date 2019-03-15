@@ -17,4 +17,14 @@ class RateTimeController extends Controller
     {
         return view('admins.addRateTime');
     }
+
+    public function load()
+    {
+        $ground = new Ground();
+        $ground =$ground->get();
+        return view('admins.addRateTime',[
+            'ground'=>$ground
+        ]);
+    }
+    
 }
