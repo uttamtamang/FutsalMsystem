@@ -11,6 +11,32 @@
     <th style="width:10%;">Delete</th>
   </tr>
   <tbody>
+  @if($ratetimes->count())
+                @foreach($ratetimes as $key=>$ratetime)
+                    <tr>
+                        <td>{!! $key + 1 !!}</td>
+                        <td>{!! str_limit($ratetime->time) !!}</td>
+                        <td>{!! str_limit($ratetime->ground_id) !!}</td>
+                        <td>{!! str_limit($ratetime->rate) !!}</td>
+                                               
+                        <td>
+                            <a href="{!! url('admins/editRateTime',$ratetime->id) !!}" type="button" class="btn btn-primary btn-sm">Edit</a>
+                            
+                        </td>
+                        <td>
+                        <form action="{!! url('admins/viewRateTime',[$ratetime->id]) !!}" method="POST">
+                                @csrf
+                                {!! method_field('DELETE') !!}
+                                <button type="submit" class="btn btn-danger btn-sm"> Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="4"> No record found</td>
+                </tr>
+            @endif
   </tbody>
 </table>
 

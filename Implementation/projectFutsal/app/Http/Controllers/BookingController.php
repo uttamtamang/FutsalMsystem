@@ -13,5 +13,13 @@ class BookingController extends Controller
         return view('admins.viewAdminBookings');
     }
 
+    public function load()
+    {
+        $ground = new Ground();
+        $ground =$ground->get();
+        return view('admins.viewAdminBookings',[
+            'ground'=>$ground
+        ]);
+    }
  
 }
