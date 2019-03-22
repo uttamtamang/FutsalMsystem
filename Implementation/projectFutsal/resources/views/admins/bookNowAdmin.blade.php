@@ -36,9 +36,11 @@
                   <div id="groundpicker" class="input-group">
                     <select class="form-control" name="ground" required>
                       <option value="">Select Ground First</option>
-                      <option value="1">First</option>
-                      <option value="2">Second</option>
-                      <option value="Third">Third</option>
+                      @if($ground->count())
+									  	@foreach($ground as $key=>$grounds)    
+                      <option value="{{$grounds->id }}">{{ $grounds->ground }}</option>
+                      @endforeach
+										  @endif
                     </select>
 
                   </div>

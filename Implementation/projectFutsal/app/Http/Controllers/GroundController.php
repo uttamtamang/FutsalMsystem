@@ -92,7 +92,7 @@ class GroundController extends Controller
         $ground->ground = $form_req['ground'];
         
         $status = $ground->save();
-        return redirect()->to('viewGround')->withSuccess('Ground successfully updated');
+        return redirect()->to('/viewGround')->withSuccess('Ground successfully updated');
     }
 
     public function destroy($id)

@@ -18,8 +18,11 @@
 
 #myTable th, #myTable td {
     text-align: center; /* Left-align text */
-    color: #ddd;
+    color: rgb(61, 38, 38);
     padding: 12px; /* Add padding */
+}
+td{
+background: #f5f7f5;
 }
 
 #data{

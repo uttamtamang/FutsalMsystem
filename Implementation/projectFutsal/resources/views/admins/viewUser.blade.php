@@ -2,8 +2,8 @@
 @section('MenuContent')
 <div class="row" >
 <div class="col-md-4">
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
-style="background:transparent; color:#fff;">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search with names.."
+style="background: #f5f7f5;; color: rgb(61, 38, 38);">
 </div>
 </div>
 

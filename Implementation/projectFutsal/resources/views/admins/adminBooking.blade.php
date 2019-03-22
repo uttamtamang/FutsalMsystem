@@ -1,22 +1,26 @@
-@extends('admins.bookNowAdmin')
 
+
+@extends('Admins.AdminDashBoard')
 @section('MenuContent')
 <style type="text/css">
+.btn
+  {
+    height:70px;
+  }
   .btnTime
   {
     padding-top:20px;
   }
 </style>
-
 <div class="container-fluid"  id="availTime">
-
   <div class="panel panel-info" >
   <div class="panel-heading"><h3>Available Time</h3></div>
   <div class="panel-body">
   	 <div class="row">
    @php
-
+   
           $tt = date("Y-m-d",time());//current date
+          $ground_id=($_REQUEST['ground']);
               $choice_date = ($_REQUEST['datecal'])? $_REQUEST["datecal"]:false;//date that came from the datepicker
               $need_sorting = ($tt==$choice_date)? true:false;
                 foreach($availableTime as $time)
@@ -24,26 +28,25 @@
                   $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime" data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
                     foreach ($booking as $book )
                   {
-                  if ($time->time==$book->time) {
+                  if ($time->time==$book->time && $time->ground_id==$book->ground_id) {
                      $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
                   }
                 }
+                  echo $printer;
+                }
 
-                  if($need_sorting){
+   @endphp
+   <!-- if($need_sorting){
                     $hour= date("H",time());
 
-                    if ($time->time==$book->time) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
+                    if ($time->label==$booking->time) {
+                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
                   }
 
                     if($hour>($time->maxTime)-2){
                       $printer = false;
                     }
-                  }
-                  echo $printer;
-                }
-
-   @endphp
+                  } -->
 
   </div>
   </div>
@@ -78,9 +81,11 @@
      			    <input type="text" name="price"class="form-control" id="price" readonly="readonly">
     			</div>
   				</div>
+         
   				<div class="form-group">
-            <input type="hidden" name="hiddenMail" value="">
-            <input type="hidden" name="hiddenrole" value=" ">
+            <input type="hidden" name="user" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="contact" value="Booked By Admin">
+            <input type="hidden" name="ground" value={{$_REQUEST["ground"]}}>
           </div>
   				<div class="form-group ">
    				<div class=" col-md-offset-3 col-md-4">

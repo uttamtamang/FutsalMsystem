@@ -30,11 +30,11 @@
                         </td>
                                                
                         <td>
-                            <a href="{!! url('admins/editGround',$ground->id) !!}" type="button" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{!! url('/editGround',$ground->id) !!}" type="button" class="btn btn-primary btn-sm">Edit</a>
                             
                         </td>
                         <td>
-                        <form action="{!! url('admins/viewGround',[$ground->id]) !!}" method="POST">
+                        <form action="{!! url('/viewGround',[$ground->id]) !!}" method="POST">
                                 @csrf
                                 {!! method_field('DELETE') !!}
                                 <button type="submit" class="btn btn-danger btn-sm"> Delete</button>

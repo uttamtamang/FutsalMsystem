@@ -58,6 +58,29 @@ class RateTimeController extends Controller
         return redirect()->to('viewRateTime')->withSuccess('New RateTime successfully added');
     }
 
+    public function edit($id)
+    {
+        $ratetime = Rate_Time::find($id);
+            return view('admins.editRateTime')->with('ratetime',$ratetime);
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'time' => 'required|max:150',
+            'rate' => 'required|max:150',
+        ]);
+
+        $ratetime = Rate_Time::find($id);
+
+        $form_req = $request->all();
+
+        $ratetime->time = $form_req['time'];
+        $ratetime->rate = $form_req['rate'];
+        
+        $status = $ratetime->save();
+        return redirect()->to('/viewRateTime')->withSuccess('Rate Time successfully updated');
+    }
+
     // public function store(Request $request)
     // {
     //     $this->validate(request(),[
