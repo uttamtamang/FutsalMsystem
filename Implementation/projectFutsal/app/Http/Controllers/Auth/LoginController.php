@@ -29,17 +29,24 @@ class LoginController extends Controller
     //protected $redirectTo = '/home';
     public function redirectTo()
     {
-        $role=Auth::user()->usertype;
-        switch($role){
-        case '0':
-        return ('/home');
-        break;
-        case '1':
-        return ('/admindash');
-        break;
-        default:
-        return ('welcome');
-        break;
+        // $role=Auth::user()->usertype;
+        // switch($role){
+        // case '0':
+        // return ('/home');
+        // break;
+        // case '1':
+        // return ('/admindash');
+        // break;
+        // default:
+        // return ('welcome');
+        // break;
+        // }
+        switch(Auth::user()->usertype){
+            case'1':
+            return('/admindash');
+            break;
+            default:
+            return '/home';
         }
 
     }

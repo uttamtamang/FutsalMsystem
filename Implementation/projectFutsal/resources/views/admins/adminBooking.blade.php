@@ -29,7 +29,7 @@
                     foreach ($booking as $book )
                   {
                   if ($time->time==$book->time && $time->ground_id==$book->ground_id) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
+                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled  value="'.$time->rate.'">'.$time->time.'</div></div>';
                   }
                 }
                   echo $printer;

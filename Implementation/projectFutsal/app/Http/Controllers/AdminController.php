@@ -65,7 +65,10 @@ class AdminController extends Controller
       else{
       $books=Bookings::all();
         foreach ($books as  $book) {
+              if ($book->status==1){
                 $total=$total+$book->rate;
+              }
+              
              }
         $date='';
       return view('admins.viewAdminBookings',compact('books','date','total'));
