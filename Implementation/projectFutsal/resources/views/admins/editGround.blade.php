@@ -1,4 +1,4 @@
-@extends('admins.admindashBoard')
+@extends('admins.admindashboard')
 @section('MenuContent')
 
 @if(session()->has('success'))

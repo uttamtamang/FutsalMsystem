@@ -79,10 +79,18 @@ class ProfileController extends Controller
         $users->name=$request->name;
          $users->address=$request->address;
           $users->phone=$request->phone;
+          $users->usertype;
+          $user = $request->get('user');
            $users->save();
-           return redirect()->to('admindash')->with('succcess','Succefully updated');
+           if($user==1){
+            return redirect()->to('admindash')->with('succcess','Succefully updated');
+           }
+           else{
+            return redirect()->to('clientdash')->with('succcess','Succefully updated');
+           }
+           
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *

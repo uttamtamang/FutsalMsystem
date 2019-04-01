@@ -1,4 +1,4 @@
-@extends('Admins.AdminDashBoard')
+@extends('admins.admindashboard')
 @section('calender')
 <style type="text/css">
     #groundpicker{
@@ -18,6 +18,8 @@
   .btn
   {
     height:70px;
+    background: linear-gradient(to left, #74ebd5, #9face6); 
+    border:none;
   }
   #btnground{
     height:35px;

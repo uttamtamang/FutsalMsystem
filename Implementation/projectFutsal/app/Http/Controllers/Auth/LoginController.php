@@ -46,7 +46,7 @@ class LoginController extends Controller
             return('/admindash');
             break;
             default:
-            return '/home';
+            return '/clientdash';
         }
 
     }

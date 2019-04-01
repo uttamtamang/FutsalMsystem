@@ -1,4 +1,4 @@
-@extends('admins.admindashBoard')
+@extends('admins.admindashboard')
 @section('MenuContent')
 
 <table id="myTable" class="table-bordered">

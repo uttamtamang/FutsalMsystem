@@ -1,4 +1,4 @@
-@extends('admins.admindashBoard')
+@extends('admins.admindashboard')
 @section('MenuContent')
 <div class="row" >
 <div class="col-md-4">

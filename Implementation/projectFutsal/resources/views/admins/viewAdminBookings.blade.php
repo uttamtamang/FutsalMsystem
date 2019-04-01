@@ -1,4 +1,4 @@
-@extends('admins.admindashBoard')
+@extends('admins.admindashboard')
 @section('MenuContent')
 <style type="text/css">
   table{

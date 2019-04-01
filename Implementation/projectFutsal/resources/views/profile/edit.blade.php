@@ -56,9 +56,9 @@ Welcome {{ Auth::user()->name }}
                         </div>
 
                        
-
+                        <input type="hidden" name="user" value="{{ Auth::user()->usertype }}">
                         <div class="form-group row mb-0">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Update"/>
+                            <input type="submit" name="submit" id="submit" class="form-submit" />
                              </div>
                     </form>
                 </div>

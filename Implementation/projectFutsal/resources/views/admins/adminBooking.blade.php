@@ -1,11 +1,11 @@
 
-
-@extends('Admins.AdminDashBoard')
+@extends('admins.admindashboard')
 @section('MenuContent')
 <style type="text/css">
 .btn
   {
     height:70px;
+    margin:5px;
   }
   .btnTime
   {
@@ -85,7 +85,7 @@
   				<div class="form-group">
             <input type="hidden" name="user" value="{{ Auth::user()->id }}">
             <input type="hidden" name="contact" value="Booked By Admin">
-            <input type="hidden" name="ground" value={{$_REQUEST["ground"]}}>
+            <input type="hidden" name="ground" value="{{$_REQUEST["ground"]}}">
           </div>
   				<div class="form-group ">
    				<div class=" col-md-offset-3 col-md-4">
