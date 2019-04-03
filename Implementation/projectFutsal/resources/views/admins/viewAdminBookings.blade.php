@@ -12,11 +12,13 @@
             <div class="col-md-4" style="">
             <div id="datepicker" class="input-group date "data-date-format="yyyy-mm-dd" >
             <span class="input-group-addon date"><i class="fa fa-calendar"></i></span>
-            <input type="text" name="datecal" id="calDate" class="form-control" style="border-radius: 0px;" value="{{$date}}" >
+            <input type="text" name="datecal" id="calDate" class="form-control" 
+            style="border-radius: 0px;" value="{{$date}}" >
             </div>
             </div>
             <div class=" col-md-2" style="padding:0px ">
-            <button type="submit"  id="btncal" class="btn btn-success btn-block" ><i class="fa fa-search-minus "></i> Show Data</button>
+            <button type="submit"  id="btncal" class="btn btn-success btn-block" >
+            <i class="fa fa-search-minus "></i> Show Data</button>
             </div>
             </form>
           </div>
@@ -31,7 +33,7 @@
     <th style="width:15%;">Phone</th>
     <th style="width:10%;">Rate</th>
     <th style="width:5%;">Status</th>
-    <th style="width:15%;">Cancel</th>
+    <th style="width:15%;">Action</th>
   </tr>
   <tbody>
   @if($books->count())
