@@ -75,6 +75,19 @@
    				   	<input type="text" name="time" class="form-control" id="time" readonly="readonly">
  				    </div>
 			  	</div>
+          <div class="form-group">
+    				<label class="control-label col-sm-3" >For</label>
+    				<div class="col-sm-9"> 
+     			    <input type="text" name="user_for"  required class="form-control" id="phone" placeholder="Booking For" >
+    			</div>
+  				</div>
+          <div class="form-group">
+    				<label class="control-label col-sm-3" >Mobile no:</label>
+    				<div class="col-sm-9"> 
+     			    <input type="tel" name="contact"  required class="form-control" id="phone" placeholder="9800000000"
+                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}" >
+    			</div>
+  				</div>
 			    				<div class="form-group">
     				<label class="control-label col-sm-3" >Price:</label>
     				<div class="col-sm-9">
@@ -84,7 +97,6 @@
          
   				<div class="form-group">
             <input type="hidden" name="user" value="{{ Auth::user()->id }}">
-            <input type="hidden" name="contact" value="Booked By Admin">
             <input type="hidden" name="ground" value="{{$_REQUEST["ground"]}}">
           </div>
   				<div class="form-group ">

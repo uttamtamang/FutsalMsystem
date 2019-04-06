@@ -15,15 +15,16 @@
   <h2 style="color:Grey;">My Bookings</h2>
     
   <br>
-  <table class="table table-bordered mybookTable ">
+  <table id="myTable" class="table-bordered" style="text-allign:centre">
     <thead>
-      <tr> 
+      <tr class="header-table"> 
         <th style="width:10%";>SN</th>
         <th style="width:10%;">Ground</th>
         <th style="width:20%;">Date</th>
         <th style="width:20%;">Time</th>
         <th style="width:20%;">Rate</th>
-        <th style="width:20%;">Action</th>
+        <th style="width:10%;">Status</th>
+        <th style="width:10%;">Action</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -35,6 +36,15 @@
         <td>{{$book->date}}</td>
         <td>{{$book->time}}</td>
         <td>{{$book->rate}}</td>
+        @if($book->status==1)
+      <td>
+        <button  class="btn btn-success"id="confirm"> Paid</button>
+        </td>
+      @else
+      <td>
+        <button   class="btn btn-danger"id="confirm"> Booked</button>
+        </td>
+      @endif
         <td ><form action="/viewClientBookings/{{$book->id}}" id="idUser" method="post" >
           {{csrf_field()}}
         {{method_field('DELETE')}}

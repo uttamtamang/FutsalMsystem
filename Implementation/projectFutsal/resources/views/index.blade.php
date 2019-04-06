@@ -88,7 +88,7 @@
           <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
               <h4>Ground Velocity</h4>
-              <p class="text-black-50 mb-0">image of a project, or anything else, along with a description.</p>
+              <p class="text-black-50 mb-0">Loacted outside our Office and not protected with any selters so you can feel same as Public Playground.</p>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-left">
                   <h4 class="text-white">Ground Phoenix</h4>
-                  <p class="mb-0 text-white-50"> image of a project, or anything else, along with a description.</p>
+                  <p class="mb-0 text-white-50">For those who prefer Professional ground like fine cut and realistic ground grass.</p>
                   <hr class="d-none d-lg-block mb-0 ml-0">
                 </div>
               </div>
@@ -121,7 +121,7 @@
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-right">
                   <h4 class="text-white">Ground Gambit</h4>
-                  <p class="mb-0 text-white-50">image of a project, or anything else, along with a description.</p>
+                  <p class="mb-0 text-white-50">Present inside Buinding and you can book in every Weather. </p>
                   <hr class="d-none d-lg-block mb-0 mr-0">
                 </div>
               </div>

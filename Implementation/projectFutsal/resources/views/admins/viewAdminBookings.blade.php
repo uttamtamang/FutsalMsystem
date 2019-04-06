@@ -23,13 +23,13 @@
             </form>
           </div>
 
-<table id="myTable" class="table-bordered">
+<table id="myTable" class="table-bordered" style="text-allign:centre">
   <tr class="header-table">
   	<th style="width:5%;">SN</th>
     <th style="width:10%;">Ground</th>
-    <th style="width:10%;">User</th>
     <th style="width:15%;">Date</th>
     <th style="width:15%;">Time</th>
+    <th style="width:10%;">For</th>
     <th style="width:15%;">Phone</th>
     <th style="width:10%;">Rate</th>
     <th style="width:5%;">Status</th>
@@ -41,13 +41,30 @@
     <tr>
       <td>{!! $key + 1 !!}</td>
       <td>{{$book->ground_id}}</td>
-      <td>{{$book->user_id}}</td>
       <td>{{$book->date}}</td>
       <td>{{$book->time}}</td>
+      <td>{{$book->user_for}}</td>
       <td>{{$book->phone}}</td>
       <td>{{$book->rate}}</td>
-      <td>{{$book->status}}</td>
-      <td><form action="/viewAdminBookings/{{$book->id}}" id="idUser" method="post" >
+      @if($book->status==1)
+      <td>
+      <form action="/viewAdminBookings/{{$book->id}}" method="post" >
+          {{csrf_field()}}
+        {{method_field('put')}}
+        <button  type="submit" class="btn btn-success"id="confirm"> Paid</button>
+        </form>
+        </td>
+      @else
+      <td>
+      <form action="/viewAdminBookings/{{$book->id}}" method="post" >
+          {{csrf_field()}}
+        {{method_field('put')}}
+        <button  type="submit" class="btn btn-danger"id="confirm"> Booked</button>
+        </form>
+        </td>
+      @endif
+      <td>
+      <form action="/viewAdminBookings/{{$book->id}}" id="idUser" method="post" >
           {{csrf_field()}}
         {{method_field('DELETE')}}
         <button  type="submit" class="btn btn-danger"id="confirm"><i class="fa fa-trash-o" style="font-size:20px"></i> Cancel Booking</button>
@@ -65,10 +82,10 @@
 </table>
 
 <script type="text/javascript" src="{{ URL::asset('js/datepicker.js')}}"></script>
-<script type="text/javascript">
 
-     $('#idUser').submit(function() {
-   return confirm("Are you sure u want to cancel this Booking?");
+<script type="text/javascript">
+   $('#idUser').submit(function() {
+   return confirm("Are you Sure u Want to delete this Booking?");
   });
 
   $(function(){

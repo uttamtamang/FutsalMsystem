@@ -58,7 +58,9 @@ class AdminController extends Controller
  
              $date=$request->datecal;
              foreach ($books as  $book) {
+              if ($book->status==1){
                 $total=$total+$book->rate;
+              }
              }
                return view('admins.viewAdminBookings',compact('books','date','total'));
       }
@@ -105,12 +107,27 @@ class AdminController extends Controller
        $booking->ground_id=$ground;
        $booking->date=$request->popupDate;
       $booking->time=$request->time;
-      $booking->phone=$request->get('contact');
+      $booking->user_for=$request->user_for;
+      $booking->phone=$request->contact;
        $booking->rate=$request->price;
        $booking->status=0;
         
        $booking->save();
        return redirect('/viewAdminBookings');
    }
+   public function statusUpdate($id)
+   {
+    $stat=Bookings::find($id);
+    if($stat->status==0){
+      $stat->status=1;
+        $status=$stat ->save();
+        return redirect()->to('/viewAdminBookings');
+    }
+    else{
+      $stat->status=0;
+      $status=$stat ->save();
+      return redirect()->to('/viewAdminBookings');
+    }
 
+   }
 }

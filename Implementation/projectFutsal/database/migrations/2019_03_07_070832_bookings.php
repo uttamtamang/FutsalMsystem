@@ -23,8 +23,10 @@ class Bookings extends Migration
             $table->string('date');
             $table->string('time');
             $table->string('phone');
+            $table->string('user_for');
             $table->double('rate');
             $table->boolean('status')->default(0);
+            
             $table->timestamps();
         });
     }

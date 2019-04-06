@@ -47,6 +47,7 @@ Route::get('/adminBooking','AdminController@viewBookTimeAdmin')->middleware('adm
 Route::get('/viewAdminBookings','AdminController@viewBookings')->middleware('admin');
 Route::post('/bookNowAdmin','AdminController@postBookNowAdmin')->middleware('admin');
 Route::delete('/viewAdminBookings/{id}','AdminController@destroyBooking')->middleware('admin');
+Route::put('/viewAdminBookings/{id}','AdminController@statusUpdate')->middleware('admin');
 
 //User controller
 Route::get('/viewUser','AdminController@showUsers')->middleware('admin');

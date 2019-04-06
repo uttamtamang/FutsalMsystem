@@ -11,6 +11,6 @@ class Bookings extends Model
 
     protected $fillable = ['ground_id', 'user_id', 'date',
         'time', 'phone', 'rate',
-         'status'
+         'status','user_for'
     ];
 }

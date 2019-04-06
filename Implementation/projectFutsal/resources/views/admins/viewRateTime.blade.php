@@ -20,14 +20,14 @@
                         <td>{!! str_limit($ratetime->rate) !!}</td>
                                                
                         <td>
-                            <a href="{!! url('admins/editRateTime',$ratetime->id) !!}" type="button" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{!! url('admins/editRateTime',$ratetime->id) !!}" type="button" class="btn btn-primary "><i class="fa fa-edit" style="font-size:20px"></i>Edit</a>
                             
                         </td>
                         <td>
                         <form action="{!! url('admins/viewRateTime',[$ratetime->id]) !!}" method="POST">
                                 @csrf
                                 {!! method_field('DELETE') !!}
-                                <button type="submit" class="btn btn-danger btn-sm"> Delete</button>
+                                <button type="submit" class="btn btn-danger "><i class="fa fa-trash-o" style="font-size:20px"></i> Delete</button>
                             </form>
                         </td>
                     </tr>

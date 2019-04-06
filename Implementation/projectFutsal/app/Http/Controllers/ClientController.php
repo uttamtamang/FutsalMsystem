@@ -61,6 +61,7 @@ class ClientController extends Controller
       $booking->time=$request->time;
       $booking->phone=$request->contact;
        $booking->rate=$request->price;
+       $booking->user_for=$request->user_for;
        $booking->status=0;
         
        $booking->save();

@@ -91,6 +91,7 @@
          
   				<div class="form-group">
             <input type="hidden" name="user" value="{{ Auth::user()->id }}">
+            <input type="hidden" name="user_for" value="{{ Auth::user()->name }}">
             <input type="hidden" name="ground" value="{{$_REQUEST["ground"]}}">
           </div>
   				<div class="form-group ">
