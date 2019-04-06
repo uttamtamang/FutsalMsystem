@@ -1,6 +1,10 @@
 @extends('admins.admindashboard')
 @section('MenuContent')
-
+@if(session()->has('success'))
+            <div class="alert alert-success">
+                {{{ session()->get('success') }}}
+            </div>
+        @endif
 <table id="myTable" class="table-bordered">
   <tr class="header-table">
   	<th style="width:5%;">SN</th>

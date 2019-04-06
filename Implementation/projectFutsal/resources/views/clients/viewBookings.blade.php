@@ -12,6 +12,11 @@
  }
 	</style>
   <div class="container-fluid">
+  @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{{ session()->get('success') }}}
+            </div>
+        @endif
   <h2 style="color:Grey;">My Bookings</h2>
     
   <br>

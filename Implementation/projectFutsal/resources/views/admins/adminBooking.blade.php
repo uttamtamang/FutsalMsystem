@@ -12,6 +12,21 @@
     padding-top:20px;
   }
 </style>
+ @if(session()->has('success'))
+            <div class="alert-success">
+                <h1> {!! session()->get('success') !!}</h1>
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul class="list-unstyled">
+                    @foreach($errors->all() as $error)
+                        <li> {{ $error  }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 <div class="container-fluid"  id="availTime">
   <div class="panel panel-info" >
   <div class="panel-heading"><h3>Available Time</h3></div>

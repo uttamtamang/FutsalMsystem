@@ -36,7 +36,7 @@ class ClientController extends Controller
 
    public function destroyBooking($id)
    {  $destroybook=Bookings::where('id',$id)->delete();
-      return redirect('/viewClientBookings');
+      return redirect('/viewClientBookings')->withSuccess('Booking deleted successfully');
    }
 
    public function viewBookTimeClient(Request $request)
@@ -65,6 +65,6 @@ class ClientController extends Controller
        $booking->status=0;
         
        $booking->save();
-       return redirect('/viewClientBookings');
+       return redirect('/viewClientBookings')->withSuccess('Booking made successfully');
    }
 }

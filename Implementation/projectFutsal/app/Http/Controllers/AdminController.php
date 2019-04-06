@@ -80,7 +80,7 @@ class AdminController extends Controller
 
   public function destroyBooking($id)
    {  $destroybook=Bookings::where('id',$id)->delete();
-      return redirect('/viewAdminBookings');
+      return redirect('/viewAdminBookings')->withSuccess('Booking deleted successfully');
    }
 
 
@@ -113,7 +113,7 @@ class AdminController extends Controller
        $booking->status=0;
         
        $booking->save();
-       return redirect('/viewAdminBookings');
+       return redirect('/viewAdminBookings')->withSuccess('Booking made successfully');
    }
    public function statusUpdate($id)
    {
