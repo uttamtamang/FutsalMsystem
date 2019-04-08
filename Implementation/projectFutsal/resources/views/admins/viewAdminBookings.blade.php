@@ -11,6 +11,7 @@
                 {{{ session()->get('success') }}}
             </div>
         @endif
+        
   <div class="container-fluid">
     <div class="row ">
             <form action="/viewAdminBookings">
@@ -41,6 +42,7 @@
     <th style="width:15%;">Action</th>
   </tr>
   <tbody>
+  
   @if($books->count())
   @foreach($books as $key=>$book)
     <tr>
@@ -69,10 +71,12 @@
         </td>
       @endif
       <td>
+      
       <form action="/viewAdminBookings/{{$book->id}}" id="idUser" method="post" >
           {{csrf_field()}}
         {{method_field('DELETE')}}
-        <button  type="submit" class="btn btn-danger"id="confirm"><i class="fa fa-trash-o" style="font-size:20px"></i> Cancel Booking</button>
+        <button  type="submit" class="btn btn-danger"id="confirm" @if($book->date<=date('Y-m-d') AND $book->status==1) 
+         disabled @endif ><i class="fa fa-trash-o" style="font-size:20px"></i> Cancel Booking</button>
         </form>
         </td>
     </tr>

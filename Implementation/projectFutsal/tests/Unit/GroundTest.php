@@ -9,43 +9,34 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class GroundTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function testGround()
+  
+    public function testGroundAdd()
     {
-        $ground=new Ground(['ground'=>'test']);
-        
-        //$response=$this->call("Post","/addGround/$ground/$image");
-        $this->assertEquals('test',$ground->ground);
+        $response = $this->call('POST','/viewGround',[
+            'ground' => "ground1",
+            'image' => "image.jpg"
+    	]);
+
+    	$this->assertEquals(302, $response->status());
     }
     public function testGroundUpdate()
     {
+
         $ground="addGround";
         $image="image2.jpg";
-        $response=$this->call("Put","/viewGround/{id}/$ground/$image");
-        $this->assertEquals(404,$response->status());
+        $response=$this->call("PUT","/viewGround/1",[
+            'ground'=>$ground, 'image'=>$image
+        ]);
+        $this->assertEquals(302,$response->status());
     }
+
+
     public function testGroundDelete()
     {
-        $ground_id=1;
-        $response=$this->call("Delete","/viewGround/{id}/$ground_id");
-        $this->assertEquals(404,$response->status());
-    }
-    public function testIndex()
-    {
-        $response=$this->get('/');
+        $response=$this->call("Delete",'/viewGround/1',['token_'=>csrf_token()
+            
+        ]);
+       $this->assertEquals(302,$response->status());
 
- 
-        $response->assertSee("Ground Gambit");
-    }
-    public function testGroundImage()
-    {
-        $ground=new Ground(['image'=>'img.jpg']);
-        
-        //$response=$this->call("Post","/addGround/$ground/$image");
-        $this->assertEquals('img.jpg',$ground->image);
     }
 }
