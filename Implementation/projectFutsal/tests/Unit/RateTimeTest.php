@@ -18,6 +18,7 @@ class RateTimeTest extends TestCase
 
     	$this->assertEquals(302, $response->status());
     }
+    
     public function testRateTimeUpdate()
     {
 

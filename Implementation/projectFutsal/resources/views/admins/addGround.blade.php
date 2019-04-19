@@ -1,6 +1,5 @@
 @extends('admins.admindashboard')
 @section('MenuContent')
-
 <div class="row">
 @if(session()->has('success'))
             <div class="alert-success">
@@ -28,7 +27,8 @@
 							<div class="form-group {{$errors->has('ground') ? 'has-error' : ''}}">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-area-chart"></i></span>
-									<input type="text" name="ground" class="form-control" placeholder="Please Enter Ground Name" value="{{old('ground')}}">
+									<input type="text" name="ground" class="form-control" placeholder="Please Enter Ground Name"
+									 value="{{old('ground')}}">
 								</div>
 								<div class="col-md-offset-1 ">
 								@if ($errors->has('ground'))
@@ -55,8 +55,4 @@
 				</div>
 			
 		</div>
-
-
-
-
 @endsection

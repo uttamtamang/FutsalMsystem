@@ -30,14 +30,16 @@
                         </td>
                                                
                         <td>
-                            <a href="{!! url('/editGround',$ground->id) !!}" type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit" style="font-size:20px"></i>Edit</a>
+                            <a href="{!! url('/editGround',$ground->id) !!}" type="button" class="btn btn-primary btn-sm">
+                            <i class="fa fa-edit" style="font-size:20px"></i>Edit</a>
                             
                         </td>
                         <td>
                         <form action="{!! url('/viewGround',[$ground->id]) !!}" method="POST">
                                 @csrf
                                 {!! method_field('DELETE') !!}
-                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" style="font-size:20px"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" style="font-size:20px">
+                                </i> Delete</button>
                             </form>
                         </td>
                     </tr>

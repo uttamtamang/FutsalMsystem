@@ -51,18 +51,6 @@
                 }
 
    @endphp
-   <!-- if($need_sorting){
-                    $hour= date("H",time());
-
-                    if ($time->label==$booking->time) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
-                  }
-
-                    if($hour>($time->maxTime)-2){
-                      $printer = false;
-                    }
-                  } -->
-
   </div>
   </div>
 

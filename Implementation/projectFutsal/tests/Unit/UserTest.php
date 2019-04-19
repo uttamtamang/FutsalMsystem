@@ -14,6 +14,7 @@ class UserTest extends TestCase
         $response=$this->get('/');
         $response->assertSee("Ground Gambit");
 	}
+	
 	public function testHome()
     {
         $response=$this->get('/');

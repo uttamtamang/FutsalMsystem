@@ -19,6 +19,7 @@ class GroundTest extends TestCase
 
     	$this->assertEquals(302, $response->status());
     }
+    
     public function testGroundUpdate()
     {
 

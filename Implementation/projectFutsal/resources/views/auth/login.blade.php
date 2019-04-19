@@ -1,6 +1,4 @@
-
 @extends('layouts.master')
-
 @section('content')
 <div id='reg_container' class="container">
 <form method="POST" id="signup-form" action="{{ route('login') }}">
@@ -36,9 +34,6 @@
                         <div class="form-group">
                         <input type="submit" name="submit" id="submit" class="form-submit" value="Log In"/>
                         </div>
-                               
-                            
-                        
                     </form>
                     @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

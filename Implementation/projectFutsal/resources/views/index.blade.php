@@ -28,7 +28,9 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">𝕵𝖆𝖓𝖆𝖙𝖆 𝕱𝖚𝖙𝖘𝖆𝖑</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+         aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
@@ -68,7 +70,8 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2 class="text-white mb-4">Janata Futsal</h2>
-            <p class="text-white-50">Janata Futsal is well known futsal Court provider. It is located at Nayapaati, Kathmandu.
+            <p class="text-white-50">Janata Futsal is well known futsal Court provider.
+             It is located at Nayapaati, Kathmandu.
             with aim of promoting football among people and healthy lifestyle environment in society.</p>
           </div>
         </div>
@@ -88,7 +91,8 @@
           <div class="col-xl-4 col-lg-5">
             <div class="featured-text text-center text-lg-left">
               <h4>Ground Velocity</h4>
-              <p class="text-black-50 mb-0">Loacted outside our Office and not protected with any selters so you can feel same as Public Playground.</p>
+              <p class="text-black-50 mb-0">Loacted outside our Office and not protected 
+              with any selters so you can feel same as Public Playground.</p>
             </div>
           </div>
         </div>
@@ -103,7 +107,8 @@
               <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-lg-left">
                   <h4 class="text-white">Ground Phoenix</h4>
-                  <p class="mb-0 text-white-50">For those who prefer Professional ground like fine cut and realistic ground grass.</p>
+                  <p class="mb-0 text-white-50">For those who prefer Professional ground like 
+                  fine cut and realistic ground grass.</p>
                   <hr class="d-none d-lg-block mb-0 ml-0">
                 </div>
               </div>
@@ -142,7 +147,8 @@
             <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
 
             <form class="form-inline d-flex">
-              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" 
+              id="inputEmail" placeholder="Enter email address...">
               <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
             </form>
 

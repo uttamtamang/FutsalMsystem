@@ -29,7 +29,8 @@
 							<div class="form-group {{$errors->has('time') ? 'has-error' : ''}}">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-									<input type="text" name="time" class="form-control" placeholder="Please Enter Time Here" value="{{old('time')}}">
+									<input type="text" name="time" class="form-control" placeholder="Please Enter Time Here"
+									 value="{{old('time')}}">
 								</div>
 								<div class="col-md-offset-1 ">
 								@if ($errors->has('time'))
@@ -64,7 +65,8 @@
 							<div class="form-group {{$errors->has('rate') ? 'has-error' : ''}}">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="	fa fa-rupee"></i></span>
-									<input type="text" name="rate" class="form-control" placeholder="Please Rate Here" value="{{old('rate')}}">
+									<input type="text" name="rate" class="form-control" placeholder="Please Rate Here" 
+									value="{{old('rate')}}">
 								</div>
 								<div class="col-md-offset-1 ">
 								@if ($errors->has('rate'))
@@ -73,9 +75,7 @@
                                     </span>
                                     @endif
                                 </div>
-                            </div>
-                            
-							
+                            </div>                       
 							<div class="form-group col-md-8 col-md-offset-2">
 								
 									<input type="submit" value="Add" class="btn btn-info btn-block">
@@ -86,10 +86,5 @@
 							
 					</div>
 				</div>
-			
 		</div>
-
-
-
-
 @endsection

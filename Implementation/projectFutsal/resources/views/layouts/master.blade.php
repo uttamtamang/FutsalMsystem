@@ -21,7 +21,6 @@
   <div class="row">
   @include('layouts.nav')
    </div> 
-   
    <div class="row">
   <section>
   @yield('content')

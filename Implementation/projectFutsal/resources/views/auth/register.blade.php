@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div id='reg_container' class="container">
     
@@ -26,7 +25,6 @@
                                         <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                 @endif
-                            
                         </div>
                         <div class="form-group row">
                             

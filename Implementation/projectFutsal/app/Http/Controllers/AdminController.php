@@ -38,14 +38,14 @@ class AdminController extends Controller
             'ground'=>$ground
         ]);
     }
-    public function load2()
-    {
-        $ground = new Ground();
-        $ground =$ground->get();
-        return view('admins.bookNowAdmin',[
-            'ground'=>$ground
-        ]);
-    }
+    // public function load2()
+    // {
+    //     $ground = new Ground();
+    //     $ground =$ground->get();
+    //     return view('admins.bookNowAdmin',[
+    //         'ground'=>$ground
+    //     ]);
+    // }
 
   public function viewBookings(Request $request)
   {

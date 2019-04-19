@@ -1,6 +1,5 @@
 @extends('admins.admindashboard')
 @section('MenuContent')
-
 <div class="row">
 @if(session()->has('success'))
             <div class="alert-success">
@@ -17,7 +16,6 @@
                 </ul>
             </div>
         @endif
-			
 			<div class="col-lg-8 col-md-offset-2">
 				<div class="panel panel-info">
 					<div class="panel-heading">
@@ -54,7 +52,6 @@
                                     @endif
                                 </div>
                             </div>
-                            
 							
 							<div class="form-group col-md-8 col-md-offset-2">
 								
@@ -68,8 +65,4 @@
 				</div>
 			
 		</div>
-
-
-
-
 @endsection

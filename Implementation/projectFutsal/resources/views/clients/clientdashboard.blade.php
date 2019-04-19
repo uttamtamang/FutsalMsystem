@@ -1,10 +1,11 @@
 
-@extends('admins.masterAdmin')
+@extends('clients.masterClient')
 @section('sidebar')
 <nav class="main-nav">
  	<ul class="main-nav-ul">
  		<li><a href="/clientdash" style="text-align:center;">Client Dashboard</a></li>
-		<li  class=""><a href="{{url('/editprofile',Auth::user()->id)}}"><i class="fa fa-user" style="font-size:18px;color:white;"></i> Edit Profile</a></li>
+		<li  class=""><a href="{{url('/editprofile',Auth::user()->id)}}"><i class="fa fa-user" style="font-size:18px;color:white;"></i>
+		 Edit Profile</a></li>
  		<li  class=""><a href="/viewClientBookings"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Bookings Details</a></li>
  		<li  class=""><a href="/bookNowClient"><i class="fa fa-soccer-ball-o" style="font-size:15px"></i> Book Now</a></li>
  		<li>

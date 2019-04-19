@@ -33,36 +33,24 @@
   <div class="panel-body">
   	 <div class="row">
    @php
-   
           $tt = date("Y-m-d",time());//current date
           $ground_id=($_REQUEST['ground']);
               $choice_date = ($_REQUEST['datecal'])? $_REQUEST["datecal"]:false;//date that came from the datepicker
               $need_sorting = ($tt==$choice_date)? true:false;
                 foreach($availableTime as $time)
                 {
-                  $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime"  data-toggle="modal" data-target="#bookModal" value="'.$time->rate.'">'.$time->time.'</div></div>';
+                  $printer = '<div class="col-md-4"><div class="btn btn-primary btn-block btnTime"  data-toggle="modal" 
+                  data-target="#bookModal"value="'.$time->rate.'">'.$time->time.'</div></div>';
                     foreach ($booking as $book )
                   {
                   if ($time->time==$book->time && $time->ground_id==$book->ground_id) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled  value="'.$time->rate.'">'.$time->time.'</div></div>';
+                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled  value="'.$time->rate.'">
+                     '.$time->time.'</div></div>';
                   }
                 }
                   echo $printer;
                 }
-
    @endphp
-   <!-- if($need_sorting){
-                    $hour= date("H",time());
-
-                    if ($time->label==$booking->time) {
-                     $printer = '<div class="col-md-4"><div class="btn btn-danger btn-block btnTime" disabled data-toggle="modal" data-target="#bookModal" value="'.$time->price.'">'.$time->label.'</div></div>';
-                  }
-
-                    if($hour>($time->maxTime)-2){
-                      $printer = false;
-                    }
-                  } -->
-
   </div>
   </div>
 
@@ -102,8 +90,7 @@
      			    <input type="tel" name="contact"  required class="form-control" id="phone" placeholder="9800000000"
                     pattern="[0-9]{3}[0-9]{3}[0-9]{4}" >
     			</div>
-  				</div>
-         
+  				</div>         
   				<div class="form-group">
             <input type="hidden" name="user" value="{{ Auth::user()->id }}">
             <input type="hidden" name="user_for" value="{{ Auth::user()->name }}">
@@ -117,22 +104,15 @@
 			</form>
  				</div>
  			</div>
-
  		</div>
  	</div>
  </div>
-
-
 </div>
 
 <script type="text/javascript">
-
-
-$(document).ready(function(){
+  $(document).ready(function(){
            $("#calDate").val('{{$_REQUEST["datecal"]}}');
     });
-
-
 		$(document).ready(function(){
     $("#btncal").click(function(){
        $("#popupDate").val($("#calDate").val());
@@ -155,8 +135,5 @@ $(document).ready(function(){
 
     });
 });
-
-
-
 </script>
 @endsection
